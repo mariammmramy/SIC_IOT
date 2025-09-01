@@ -1,0 +1,33 @@
+1-
+Files:
+r : reading the file contents
+w : modifying the file
+x : running the file 
+
+Directories:
+r : allows listing the files in directory
+w : allows creating or editing files
+x : allows entering directory and accessing files inside
+
+Example using ls-l:
+-rwxr--r--  1 mariam users  1024 Sep  1  notes.sh
+drwxr-x---  2 mariam users  4096 Sep  1  projects
+2-
+Octal :
+r = 4, w = 2, x = 1
+
+and we add them to get number, and we also can list in order of owner, group , others
+ex: 500 = 4+1 so r-x, 0 so ---, 0 so ---
+
+Unmask:
+It subtracts permissions from the system default
+ex:
+If umask = 022:
+New file: 666 - 022 = 644 (rw-r--r--)
+New directory: 777 - 022 = 755 (rwxr-xr-x)
+
+3-
+Normal user has limited permissions and can’t install packages and has limitations.
+
+Root user is superuser and has full access to any files and can install any packages
+Dangerous because: full control can destroy the system from minor mistakes
