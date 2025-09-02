@@ -1,0 +1,26 @@
+1-What happens step by step when you type a command in bash (e.g., ls) until you see the
+output?
+1-Your commands are are read by the bash shell 
+2-Bash checks if ls is a built-in command, alias, or function. If not, it looks for an executable file called ls.
+3-Bash searches for ls in the directories listed in the $PATH environments (/bin, /usr/bin, etc.).
+4-The shell creates a new process which will be child of shell. The parent process (bash) continues running.
+5-The Linux kernel schedules the process, allocates CPU time, and handles system calls
+6-ls writes the results in shell
+7-ls finishes, it calls exit().
+
+2-
+Explain the types of processes in Linux: daemon, zombie, orphan. How can you detect
+them?
+
+daemon is a background process not in terminal
+orphan is process that its parent has ended
+zombie is a child that ended but it is still in execute table so it takes up space
+
+3-
+ Why do we need Inter-Process Communication (IPC)? List some IPC mechanisms and
+real-life examples.
+Processes share data together and may need each others outputs
+some mechanisms are like pipeline in linux
+example: ls | grep "hello" 
+it means search for in listed items the word hello
+
