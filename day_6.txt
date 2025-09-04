@@ -1,0 +1,25 @@
+1-How does cron scheduling work? Show a crontab entry to run a script every 5 minutes. 
+-cron is a time-based job scheduler in Linux.
+It uses a crontab file where each line represents a scheduled job.
+
+example:
+*/5 * * * * /home/mariam/iot_logger/sensor.py >> /home/mariam/iot_logger/logs/sensor.log 2>&1
+
+
+2-Why do we need log rotation? Show an example logrotate config for temperature.log. 
+Logs grow indefinitely if not managed eventually filling disk space, so we compress older logs to save space or delete very old logs
+
+3-Explain the difference between a Virtual Machine and a Container.Must containers use the same OS as the host? Why or why not?
+Virtual Machine is a full computer system running on top of another computer
+
+Container shares the host’s kernel and has an isolated environment for running applications.
+
+Kernel must match in container since containers share the host’s kernel, they cannot run a different kernel type.
+
+User space can be diffrent for example host can be running on ubuntu but container can be debian , they both have same kernel
+ 
+4-Reflection: Which actions in this project combined multiple Linux concepts (e.g., redirection + process monitoring)? How does this apply to real IoT systems?
+
+-Running the Python script in the background + verifying with ps or jobs. This combines process control with running in background (&) with process monitoring using ps.
+
+-Redirecting script output into temperature.log + log rotation. Here you combined input ouput redirection > or >> for log management.
